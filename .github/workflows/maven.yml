@@ -22,4 +22,4 @@ jobs:
           distribution: 'temurin'
 
       - name: Build employee-pension-cli only
-        run: mvn -f lab/employee-pension-cli/pom.xml clean install
+        run: mvn -f lab/lab01b/employee-pension-cli/pom.xml clean install
