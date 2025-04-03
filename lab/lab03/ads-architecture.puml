@@ -1,0 +1,41 @@
+@startuml
+title ADS Dental Surgery - Software Architecture
+
+skinparam rectangle {
+  BackgroundColor #FDF6E3
+  BorderColor Black
+}
+
+' Define layers
+rectangle "Client Layer\n(Web/Mobile)" as Client {
+  [Web Browser]
+  [Mobile App]
+}
+
+rectangle "Presentation Layer\n(Spring Boot Controllers)" as Presentation {
+  [PatientController]
+  [DentistController]
+  [AppointmentController]
+}
+
+rectangle "Business Logic Layer\n(Spring Services)" as Service {
+  [PatientService]
+  [AppointmentService]
+  [BillingService]
+}
+
+rectangle "Persistence Layer\n(Spring Data JPA)" as Persistence {
+  [PatientRepository]
+  [AppointmentRepository]
+  [BillRepository]
+}
+
+database "Database\n(MySQL/PostgreSQL)" as DB
+
+' Arrows to show flow
+Client --> Presentation
+Presentation --> Service
+Service --> Persistence
+Persistence --> DB
+
+@enduml
