@@ -1,0 +1,29 @@
+# IntelliJ project files
+.idea/
+*.iml
+
+# Java build artifacts
+target/
+out/
+
+# Maven
+.log
+.mvn/timing.properties
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Class files
+*.class
+
+# Ignore screenshots and temporary images if not final
+lab/*/screenshots/
+*.png
+*.jpg
+
+# VS Code
+.vscode/
