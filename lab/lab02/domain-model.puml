@@ -1,0 +1,48 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+class Dentist {
+  - id: Long
+  - firstName: String
+  - lastName: String
+  - phone: String
+  - email: String
+  - specialization: String
+}
+
+class Patient {
+  - id: Long
+  - firstName: String
+  - lastName: String
+  - phone: String
+  - email: String
+  - mailingAddress: String
+  - dateOfBirth: Date
+}
+
+class Appointment {
+  - id: Long
+  - date: Date
+  - time: Time
+}
+
+class Surgery {
+  - id: Long
+  - name: String
+  - address: String
+  - phone: String
+}
+
+class Bill {
+  - id: Long
+  - amount: Double
+  - status: String
+  - dateIssued: Date
+}
+
+Dentist "1" -- "0..*" Appointment : handles >
+Patient "1" -- "0..*" Appointment : books >
+Appointment "1" -- "1" Surgery : takes place at >
+Patient "1" -- "0..*" Bill : has >
+
+@enduml
