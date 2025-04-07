@@ -22,8 +22,7 @@ Thumbs.db
 
 # Ignore screenshots and temporary images if not final
 lab/*/screenshots/
-*.png
-*.jpg
+
 
 # VS Code
 .vscode/
