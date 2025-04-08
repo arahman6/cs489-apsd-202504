@@ -1,0 +1,76 @@
+@startuml
+
+entity patients {
+    * patientId : INT <<PK>>
+    --
+    firstName : VARCHAR(45)
+    lastName : VARCHAR(45)
+    addressId : INT <<FK>>
+}
+
+entity dentists {
+    * dentistId : INT <<PK>>
+    --
+    firstName : VARCHAR(45)
+    lastName : VARCHAR(45)
+}
+
+entity appointments {
+    * appointmId : BIGINT <<PK>>
+    --
+    appointmDate : DATE
+    appointmTime : TIME
+    dentistId : INT <<FK>>
+    patientId : INT <<FK>>
+    surgeryId : INT <<FK>>
+}
+
+entity surgeries {
+    * surgeryId : INT <<PK>>
+    --
+    name : VARCHAR(45)
+    surgeryNo : CHAR(5)
+    addressId : INT <<FK>>
+}
+
+entity addresses {
+    * addressId : INT <<PK>>
+    --
+    street : VARCHAR(45)
+    city : VARCHAR(45)
+    state : VARCHAR(2)
+    zipCode : VARCHAR(10)
+}
+
+entity users {
+    * userId : INT <<PK>>
+    --
+    username : VARCHAR(45)
+    password : VARCHAR(45)
+}
+
+entity roles {
+    * roleId : INT <<PK>>
+    --
+    roleName : VARCHAR(45)
+}
+
+entity user_roles {
+    * userRoleId : INT <<PK>>
+    --
+    userId : INT <<FK>>
+    roleId : INT <<FK>>
+}
+
+' Relationships
+patients }o--|| addresses : lives at
+surgeries }o--|| addresses : located at
+
+appointments }|--|| patients : for
+appointments }|--|| dentists : with
+appointments }|--|| surgeries : at
+
+user_roles }|--|| users : belongs to
+user_roles }|--|| roles : has role
+
+@enduml

@@ -1,0 +1,49 @@
+@startuml
+
+
+class Dentist {
+    +dentistId: String
+    +firstName: String
+    +lastName: String
+    +phone: String
+    +email: String
+    +specialization: String
+    +viewAppointments()
+}
+
+class Patient {
+    +patientId: String
+    +firstName: String
+    +lastName: String
+    +phone: String
+    +email: String
+    +address: String
+    +dateOfBirth: Date
+    +hasUnpaidBill: Boolean
+    +viewAppointments()
+    +requestAppointment()
+    +cancelAppointment()
+}
+
+class Appointment {
+    +appointmentId: String
+    +dateTime: DateTime
+    +status: String
+    +confirmationSent: Boolean
+}
+
+class Surgery {
+    +surgeryId: String
+    +name: String
+    +address: String
+    +phone: String
+}
+
+' Relationships
+Patient "1" -- "0..*" Appointment : requests >
+Dentist "1" -- "0..5" Appointment : assigned to >
+Appointment "1" -- "1" Surgery : held at >
+Appointment "1" -- "1" Patient : for >
+Appointment "1" -- "1" Dentist : with >
+
+@enduml
