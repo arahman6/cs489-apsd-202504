@@ -101,6 +101,8 @@ Used as a shared dimension for both **patients** and **surgeries**, which is goo
 
 -   `roleId` (FK → `roles`)
 
+#### UML Diagram
+![lab05.png](lab05.png)
 
 **2\. SQL Implementation**
 ----------------------------------------------------------------
