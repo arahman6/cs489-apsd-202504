@@ -3,12 +3,14 @@ package edu.miu.cs.cs489.adsdentalapp.controller;
 import edu.miu.cs.cs489.adsdentalapp.dto.request.UserRequest;
 import edu.miu.cs.cs489.adsdentalapp.dto.response.UserResponse;
 import edu.miu.cs.cs489.adsdentalapp.service.UserService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@Tag(name = "Users", description = "Endpoints for managing system users and credentials")
 @RestController
 @RequestMapping("/api/users")
 @RequiredArgsConstructor

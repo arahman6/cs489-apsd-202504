@@ -3,12 +3,14 @@ package edu.miu.cs.cs489.adsdentalapp.controller;
 import edu.miu.cs.cs489.adsdentalapp.dto.request.RoleRequest;
 import edu.miu.cs.cs489.adsdentalapp.dto.response.RoleResponse;
 import edu.miu.cs.cs489.adsdentalapp.service.RoleService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@Tag(name = "Roles", description = "Endpoints for managing user roles and permissions")
 @RestController
 @RequestMapping("/api/roles")
 @RequiredArgsConstructor

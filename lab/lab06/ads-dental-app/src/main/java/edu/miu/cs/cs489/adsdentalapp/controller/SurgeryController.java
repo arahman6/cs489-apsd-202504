@@ -3,12 +3,14 @@ package edu.miu.cs.cs489.adsdentalapp.controller;
 import edu.miu.cs.cs489.adsdentalapp.dto.request.SurgeryRequest;
 import edu.miu.cs.cs489.adsdentalapp.dto.response.SurgeryResponse;
 import edu.miu.cs.cs489.adsdentalapp.service.SurgeryService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@Tag(name = "Surgeries", description = "Endpoints for managing dental surgery locations")
 @RestController
 @RequestMapping("/api/surgeries")
 @RequiredArgsConstructor
