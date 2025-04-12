@@ -47,3 +47,13 @@ properties
 spring.datasource.username=your_db_username
 spring.datasource.password=your_db_password
 ```
+
+
+### Swagger / OpenAPI Docs
+Once the app is running, visit:
+
+Swagger UI: http://localhost:8080/swagger-ui.html
+
+OpenAPI JSON: http://localhost:8080/v3/api-docs
+
+You can also import this into Postman via link/copy-paste the json.
