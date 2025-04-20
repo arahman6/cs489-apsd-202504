@@ -70,19 +70,31 @@ You can also import this into Postman via link/copy-paste the json.
 ### 02b. View Patient - Not Found Error
 ![02b](./screenshots/02b.png)
 
-### 03. Add New Patient
-![03](./screenshots/03.png)
+### 3a. Register a new patient (valid)
+![03](./screenshots/03a.png)
 
-### 04. Update Patient
-![04](./screenshots/04.png)
+### 3b. Register a patient (invalid address)
+![03](./screenshots/03b.png)
 
-### 05. Delete Patient
-![05](./screenshots/05.png)
+### 4a. Update patient by valid ID
+![04](./screenshots/04a.png)
 
-### 06. Search Patient by Name
-![06](./screenshots/06.png)
+### 4b. Update patient by invalid ID
+![04](./screenshots/04b.png)
 
-### ✅ 07. List All Addresses
+### 5a. Delete patient by valid ID
+![05](./screenshots/05a.png)
+
+### 5b. Delete patient by invalid ID
+![05](./screenshots/05b.png)
+
+### 6a. Search patients (match)
+![06](./screenshots/06a.png)
+
+### 6b. Search patients (no match)
+![06](./screenshots/06b.png)
+
+### 7. Get all addresses (sorted by city)
 ![07](./screenshots/07.png)
 
 
