@@ -57,3 +57,33 @@ Swagger UI: http://localhost:8080/swagger-ui.html
 OpenAPI JSON: http://localhost:8080/v3/api-docs
 
 You can also import this into Postman via link/copy-paste the json.
+
+
+## Screenshots
+
+### 01. List all Patients
+![01](./screenshots/01.png)
+
+### 02a. View Patient by ID
+![02a](./screenshots/02a.png)
+
+### 02b. View Patient - Not Found Error
+![02b](./screenshots/02b.png)
+
+### 03. Add New Patient
+![03](./screenshots/03.png)
+
+### 04. Update Patient
+![04](./screenshots/04.png)
+
+### 05. Delete Patient
+![05](./screenshots/05.png)
+
+### 06. Search Patient by Name
+![06](./screenshots/06.png)
+
+### ✅ 07. List All Addresses
+![07](./screenshots/07.png)
+
+
+

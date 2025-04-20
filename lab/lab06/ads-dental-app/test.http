@@ -1,0 +1,99 @@
+### 1. Get all patients (sorted by last name)
+GET http://localhost:8080/adsweb/api/v1/patients
+Accept: application/json
+
+###
+
+### 2a. Get patient by valid ID
+GET http://localhost:8080/adsweb/api/v1/patients/1
+Accept: application/json
+
+###
+
+### 2b. Get patient by invalid ID
+GET http://localhost:8080/adsweb/api/v1/patients/999
+Accept: application/json
+
+###
+
+### 3a. Register a new patient (valid)
+POST http://localhost:8080/adsweb/api/v1/patients
+Content-Type: application/json
+
+{
+  "patientNo": "P500",
+  "firstName": "Test",
+  "lastName": "User",
+  "phone": "(555) 123-4567",
+  "addressId": 1
+}
+
+###
+
+### 3b. Register a patient (invalid address)
+POST http://localhost:8080/adsweb/api/v1/patients
+Content-Type: application/json
+
+{
+  "patientNo": "P501",
+  "firstName": "Invalid",
+  "lastName": "Address",
+  "phone": "(555) 000-0000",
+  "addressId": 999
+}
+
+###
+
+### 4a. Update patient by valid ID
+PUT http://localhost:8080/adsweb/api/v1/patients/1
+Content-Type: application/json
+
+{
+  "patientNo": "P105",
+  "firstName": "Updated",
+  "lastName": "Name",
+  "phone": "(111) 111-1111",
+  "addressId": 1
+}
+
+###
+
+### 4b. Update patient by invalid ID
+PUT http://localhost:8080/adsweb/api/v1/patients/999
+Content-Type: application/json
+
+{
+  "patientNo": "P999",
+  "firstName": "Does",
+  "lastName": "NotExist",
+  "phone": "(000) 000-0000",
+  "addressId": 1
+}
+
+###
+
+### 5a. Delete patient by valid ID
+DELETE http://localhost:8080/adsweb/api/v1/patients/3
+
+###
+
+### 5b. Delete patient by invalid ID
+DELETE http://localhost:8080/adsweb/api/v1/patients/999
+
+###
+
+### 6a. Search patients (match)
+GET http://localhost:8080/adsweb/api/v1/patients/search/ian
+Accept: application/json
+
+###
+
+### 6b. Search patients (no match)
+GET http://localhost:8080/adsweb/api/v1/patients/search/zzzz
+Accept: application/json
+
+###
+
+### 7. Get all addresses (sorted by city)
+GET http://localhost:8080/adsweb/api/v1/addresses
+Accept: application/json
