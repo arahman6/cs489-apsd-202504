@@ -1,8 +1,11 @@
 package edu.miu.cs.cs489.adsdentalapp.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.List;
 
 @Entity
 @Table(name = "addresses")
@@ -19,6 +22,10 @@ public class Address {
     private String city;
     private String state;
     private String zipCode;
+
+    @OneToMany(mappedBy = "address", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JsonManagedReference
+    private List<Patient> patients;
 
 
     public Address(String street, String city, String state, String zipCode) {

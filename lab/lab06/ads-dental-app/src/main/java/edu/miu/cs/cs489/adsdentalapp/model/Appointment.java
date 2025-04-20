@@ -33,15 +33,15 @@ public class Appointment {
     @Column(name = "appointment_type")
     private String appointmentType;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "patient_id")
     private Patient patient;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "dentist_id")
     private Dentist dentist;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "surgery_id")
     private Surgery surgery;
 

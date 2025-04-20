@@ -2,6 +2,7 @@ package edu.miu.cs.cs489.adsdentalapp.service.impl;
 
 import edu.miu.cs.cs489.adsdentalapp.dto.request.PatientRequest;
 import edu.miu.cs.cs489.adsdentalapp.dto.response.PatientResponse;
+import edu.miu.cs.cs489.adsdentalapp.exception.PatientNotFoundException;
 import edu.miu.cs.cs489.adsdentalapp.mapper.PatientMapper;
 import edu.miu.cs.cs489.adsdentalapp.model.Address;
 import edu.miu.cs.cs489.adsdentalapp.model.Patient;
@@ -32,9 +33,28 @@ public class PatientServiceImpl implements PatientService {
     }
 
     @Override
+    public List<PatientResponse> findAllSortedByLastName() {
+        return patientRepository.findAllByOrderByLastNameAsc()
+                .stream()
+                .map(patientMapper::toResponse)
+                .toList();
+    }
+
+    @Override
+    public List<PatientResponse> searchPatients(String searchString) {
+        return patientRepository
+                .findByFirstNameContainingIgnoreCaseOrLastNameContainingIgnoreCaseOrPhoneContainingIgnoreCase(
+                        searchString, searchString, searchString)
+                .stream()
+                .map(patientMapper::toResponse)
+                .toList();
+    }
+
+    @Override
     public Optional<PatientResponse> getPatientById(Long id) {
-        return patientRepository.findById(id)
-                .map(patientMapper::toResponse);
+        return Optional.of(patientRepository.findById(id)
+                .map(patientMapper::toResponse)
+                .orElseThrow(() -> new PatientNotFoundException(id)));
     }
 
     @Override
@@ -53,9 +73,7 @@ public class PatientServiceImpl implements PatientService {
         return patientRepository.findById(id).map(existing -> {
             Patient updated = patientMapper.toEntity(request);
             updated.setId(existing.getId());
-            if (request.getAddressId() != null) {
-                addressRepository.findById(request.getAddressId()).ifPresent(updated::setAddress);
-            }
+            updated.setAddress(addressRepository.findById(request.getAddressId()).orElse(null));
             return patientMapper.toResponse(patientRepository.save(updated));
         });
     }
@@ -63,8 +81,9 @@ public class PatientServiceImpl implements PatientService {
     @Override
     @Transactional
     public void deletePatient(Long id) {
-        if (patientRepository.existsById(id)) {
-            patientRepository.deleteById(id);
+        if (!patientRepository.existsById(id)) {
+            throw new PatientNotFoundException(id);
         }
+        patientRepository.deleteById(id);
     }
 }

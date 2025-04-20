@@ -1,9 +1,12 @@
 package edu.miu.cs.cs489.adsdentalapp.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.List;
 
 @Entity
 @Table(name = "patients")
@@ -28,9 +31,13 @@ public class Patient {
     @Column(name = "phone")
     private String phone;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "address_id")
+    @JsonBackReference
     private Address address;
+
+    @OneToMany(mappedBy = "patient", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Appointment> appointments;
 
 
     public Patient(String patientNo, String firstName, String lastName, String phone, Address address) {

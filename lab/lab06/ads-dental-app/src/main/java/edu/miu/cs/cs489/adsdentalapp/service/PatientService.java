@@ -8,6 +8,9 @@ import java.util.Optional;
 
 public interface PatientService {
     List<PatientResponse> getAllPatients();
+    List<PatientResponse> findAllSortedByLastName();
+    List<PatientResponse> searchPatients(String searchString);
+
     Optional<PatientResponse> getPatientById(Long id);
     Optional<PatientResponse> addPatient(PatientRequest request);
     Optional<PatientResponse> updatePatient(Long id, PatientRequest request);
