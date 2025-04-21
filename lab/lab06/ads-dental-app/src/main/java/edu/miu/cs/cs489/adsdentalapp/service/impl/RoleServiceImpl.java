@@ -3,7 +3,7 @@ package edu.miu.cs.cs489.adsdentalapp.service.impl;
 import edu.miu.cs.cs489.adsdentalapp.dto.request.RoleRequest;
 import edu.miu.cs.cs489.adsdentalapp.dto.response.RoleResponse;
 import edu.miu.cs.cs489.adsdentalapp.mapper.RoleMapper;
-import edu.miu.cs.cs489.adsdentalapp.model.Role;
+import edu.miu.cs.cs489.adsdentalapp.user.Role;
 import edu.miu.cs.cs489.adsdentalapp.repository.RoleRepository;
 import edu.miu.cs.cs489.adsdentalapp.service.RoleService;
 import jakarta.transaction.Transactional;

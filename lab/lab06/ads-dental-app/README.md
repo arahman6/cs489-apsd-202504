@@ -61,41 +61,10 @@ You can also import this into Postman via link/copy-paste the json.
 
 ## Screenshots
 
-### 01. List all Patients
+### 01. Create Account
 ![01](./screenshots/01.png)
 
-### 02a. View Patient by ID
-![02a](./screenshots/02a.png)
-
-### 02b. View Patient - Not Found Error
-![02b](./screenshots/02b.png)
-
-### 3a. Register a new patient (valid)
-![03](./screenshots/03a.png)
-
-### 3b. Register a patient (invalid address)
-![03](./screenshots/03b.png)
-
-### 4a. Update patient by valid ID
-![04](./screenshots/04a.png)
-
-### 4b. Update patient by invalid ID
-![04](./screenshots/04b.png)
-
-### 5a. Delete patient by valid ID
-![05](./screenshots/05a.png)
-
-### 5b. Delete patient by invalid ID
-![05](./screenshots/05b.png)
-
-### 6a. Search patients (match)
-![06](./screenshots/06a.png)
-
-### 6b. Search patients (no match)
-![06](./screenshots/06b.png)
-
-### 7. Get all addresses (sorted by city)
-![07](./screenshots/07.png)
-
+### 02a. List of account via token
+![02a](./screenshots/02.png)
 
 

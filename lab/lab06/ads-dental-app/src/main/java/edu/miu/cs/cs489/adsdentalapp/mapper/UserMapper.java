@@ -2,7 +2,7 @@ package edu.miu.cs.cs489.adsdentalapp.mapper;
 
 import edu.miu.cs.cs489.adsdentalapp.dto.request.UserRequest;
 import edu.miu.cs.cs489.adsdentalapp.dto.response.UserResponse;
-import edu.miu.cs.cs489.adsdentalapp.model.User;
+import edu.miu.cs.cs489.adsdentalapp.user.User;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 

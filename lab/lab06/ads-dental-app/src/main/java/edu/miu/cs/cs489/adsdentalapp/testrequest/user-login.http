@@ -1,0 +1,27 @@
+### Register a new user
+POST http://localhost:8080/adsweb/api/v1/auth/register
+Content-Type: application/json
+
+{
+  "username": "arif",
+  "password": "password123",
+  "role": {
+    "id": 1,
+    "roleName": "ADMIN"
+  }
+}
+
+
+### get user
+GET http://localhost:8080/adsweb/api/v1/users
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhcmlmIiwiYXV0aG9yaXRpZXMiOlt7ImF1dGhvcml0eSI6IlJPTEVfQURNSU4ifV0sImlhdCI6MTc0NTE5OTA3MywiZXhwIjoxNzQ1Mjg1NDczfQ.H7GkHSMoMh38KdXHEewNtu-18Bx4zxgkeNYUwp_IsOo
+
+### Authenticate (Login)
+POST http://localhost:8080/adsweb/api/v1/auth/authenticate
+Content-Type: application/json
+
+{
+  "username": "arif",
+  "password": "password123"
+}
+

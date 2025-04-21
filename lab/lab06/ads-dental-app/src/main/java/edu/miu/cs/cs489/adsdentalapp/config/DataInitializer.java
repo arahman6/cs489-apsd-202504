@@ -2,6 +2,9 @@ package edu.miu.cs.cs489.adsdentalapp.config;
 
 import edu.miu.cs.cs489.adsdentalapp.model.*;
 import edu.miu.cs.cs489.adsdentalapp.repository.*;
+import edu.miu.cs.cs489.adsdentalapp.user.Role;
+import edu.miu.cs.cs489.adsdentalapp.user.User;
+import edu.miu.cs.cs489.adsdentalapp.user.UserRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

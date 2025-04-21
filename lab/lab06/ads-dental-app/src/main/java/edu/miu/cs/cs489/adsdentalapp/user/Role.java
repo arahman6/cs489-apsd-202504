@@ -1,4 +1,4 @@
-package edu.miu.cs.cs489.adsdentalapp.model;
+package edu.miu.cs.cs489.adsdentalapp.user;
 
 import jakarta.persistence.*;
 import lombok.Data;
